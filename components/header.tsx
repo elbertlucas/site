@@ -4,42 +4,39 @@ import * as React from "react"
 import { AudioLinesIcon, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
+import { scrollToElement } from "@/lib/scroll-into-view"
 
 export function Header() {
   const { setTheme } = useTheme()
-
-  const scrollToElement = (elementId: string) => {
-    const element = document.getElementById(elementId);
-    element?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center'
-    });
-  }
 
   return (
     <header className="flex justify-between items-center w-screen fixed top-2 px-6">
       <AudioLinesIcon />
       <div className="flex justify-center items-center gap-2">
-        <ul className="hidden md:flex justify-center items-center gap-2 text-sm">
+        <ul className="hidden sm:flex justify-center items-center gap-2 text-sm">
           <li
             onClick={() => scrollToElement('home')}
             className="p-2 hover:dark:bg-secondary hover:bg-gray-200 cursor-pointer rounded-sm"
-          >home</li>
+          >
+            quem eu sou?
+          </li>
           <li
             onClick={() => scrollToElement('services')}
             className="p-2 hover:dark:bg-secondary hover:bg-gray-200 cursor-pointer rounded-sm"
-          >serviços
+          >
+            o que faço?
           </li>
           <li
             onClick={() => scrollToElement('projects')}
             className="p-2 hover:dark:bg-secondary hover:bg-gray-200 cursor-pointer rounded-sm"
           >
-            projetos
+            meus projetos
           </li>
           <li
-          onClick={() => scrollToElement('contacts')}
+            onClick={() => scrollToElement('contacts')}
             className="p-2 hover:dark:bg-secondary hover:bg-gray-200 cursor-pointer rounded-sm"
-          >contato
+          >
+            contato
           </li>
         </ul>
 

@@ -2,7 +2,7 @@ import { GithubIcon, LinkedinIcon } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="flex justify-between items-center gap-4 bg-gray-300 dark:bg-slate-900 overscroll-contain px-10 md:px-48 py-6">
+    <footer className="flex justify-between items-center gap-4 overscroll-contain px-10 md:px-48 py-6">
       <label className="text-sm font">@elbertlucas 2024</label>
       <div>
         <ul className="flex text-sm gap-4">

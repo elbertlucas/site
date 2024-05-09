@@ -29,21 +29,21 @@ const projects = [{
 export function Projects() {
   return (
     <div id="projects" className="flex flex-col justify-center items-center gap-4 overscroll-contain py-[3rem]">
-      <label className="w-2/3 text-2xl md:text-4xl font-semibold mb-4 text-center">Projetos</label>
+      <label className="w-2/3 text-2xl md:text-2xl font-semibold mb-4 text-center sm:text-left"># Meus projetos</label>
       <div className="flex flex-wrap justify-center items-start w-full gap-4">
         {
           projects.map((project, index) => (
-            <Card key={index} className={`min-w-[250px] max-w-[350px] border-2 rounded-md ${color[project.category]}`}>
+            <Card key={index} className={`min-w-[250px] max-w-[400px] border-2 bg-secondary dark:bg-primary-foreground rounded-md ${color[project.category]}`}>
               <CardHeader>
                 <CardTitle>{project.title}</CardTitle>
                 <CardDescription>{project.subtitle}</CardDescription>
-                <CardDescription className="flex flex-wrap gap-1">
-                  {project.technologies.map((technology, index) => (
-                    <Badge className='my-1' key={index}>{technology}</Badge>
-                  ))}
-                </CardDescription>
               </CardHeader>
               <CardContent>
+                <div className="flex flex-wrap gap-1">
+                  {project.technologies.map((technology, index) => (
+                    <Badge className='mb-2 rounded-md px-4' key={index}>{technology}</Badge>
+                  ))}
+                </div>
                 {project.description}
               </CardContent>
               <CardFooter>
