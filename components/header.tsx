@@ -1,17 +1,19 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import { AudioLinesIcon, Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-import { Button } from "@/components/ui/button"
-import { scrollToElement } from "@/lib/scroll-into-view"
+import { Button } from '@/components/ui/button'
+import { scrollToElement } from '@/lib/scroll-into-view'
+import { Moon, Sun } from 'lucide-react'
+import { useTheme } from 'next-themes'
+import * as React from 'react'
 
 export function Header() {
   const { setTheme } = useTheme()
 
   return (
     <header className="flex justify-between items-center w-screen fixed top-2 px-6">
-      <AudioLinesIcon />
+      <h2>
+        <strong>elbert</strong>lucas
+      </h2>
       <div className="flex justify-center items-center gap-2">
         <ul className="hidden sm:flex justify-center items-center gap-2 text-sm">
           <li
@@ -42,11 +44,13 @@ export function Header() {
 
         <Button variant="outline" size="icon" className="w-auto h-auto">
           <Sun
-            onClick={() => setTheme("dark")}
-            className="h-[2.2rem] w-[2.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 p-2" />
+            onClick={() => setTheme('dark')}
+            className="h-[2.2rem] w-[2.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 p-2"
+          />
           <Moon
-            onClick={() => setTheme("light")}
-            className="absolute h-[2.2rem] w-[2.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 p-2" />
+            onClick={() => setTheme('light')}
+            className="absolute h-[2.2rem] w-[2.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 p-2"
+          />
         </Button>
       </div>
     </header>

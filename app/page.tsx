@@ -1,10 +1,10 @@
-import { Contacts } from "@/components/contacts";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
-import { Home } from "@/components/home";
-import { Projects } from "@/components/projects";
-import { Services } from "@/components/services";
-import { Separator } from "@/components/ui/separator";
+import { Contacts } from '@/components/contacts'
+import { Footer } from '@/components/footer'
+import { Header } from '@/components/header'
+import { Home } from '@/components/home'
+import { Projects } from '@/components/projects'
+import { Services } from '@/components/services'
+import { Separator } from '@/components/ui/separator'
 
 export default function HomePage() {
   return (
@@ -17,7 +17,7 @@ export default function HomePage() {
       <Projects />
       <Separator />
       <Contacts />
-      <Footer/>
+      <Footer />
     </main>
-  );
+  )
 }

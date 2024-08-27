@@ -1,4 +1,4 @@
-import { GithubIcon, LinkedinIcon } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from 'lucide-react'
 
 export function Footer() {
   return (
@@ -7,19 +7,25 @@ export function Footer() {
       <div>
         <ul className="flex text-sm gap-4">
           <li>
-            <a className="w-full" href="https://www.linkedin.com/in/elbertlucas" target="_blank">
-              <LinkedinIcon
-                className="p-1 w-[2rem] h-[2rem] rounded-md hover:bg-primary hover:text-secondary cursor-pointer" />
+            <a
+              className="w-full"
+              href="https://www.linkedin.com/in/elbertlucas"
+              target="_blank"
+            >
+              <LinkedinIcon className="p-1 w-[2rem] h-[2rem] rounded-md hover:bg-primary hover:text-secondary cursor-pointer" />
             </a>
           </li>
           <li>
-            <a className="w-full" href="https://github.com/elbertlucas" target="_blank">
-              <GithubIcon
-                className="p-1 w-[2rem] h-[2rem] rounded-md hover:bg-primary hover:text-secondary cursor-pointer" />
+            <a
+              className="w-full"
+              href="https://github.com/elbertlucas"
+              target="_blank"
+            >
+              <GithubIcon className="p-1 w-[2rem] h-[2rem] rounded-md hover:bg-primary hover:text-secondary cursor-pointer" />
             </a>
           </li>
         </ul>
       </div>
-    </footer >
+    </footer>
   )
 }
