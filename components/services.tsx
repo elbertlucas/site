@@ -6,7 +6,7 @@ import {
   AccordionTrigger,
 } from './ui/accordion'
 import { Button } from './ui/button'
-import { Card, CardDescription, CardHeader, CardTitle } from './ui/card'
+import { Card, CardHeader, CardTitle } from './ui/card'
 
 export function Services() {
   return (

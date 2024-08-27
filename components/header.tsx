@@ -20,13 +20,13 @@ export function Header() {
             onClick={() => scrollToElement('home')}
             className="p-2 hover:dark:bg-secondary hover:bg-gray-200 cursor-pointer rounded-sm"
           >
-            quem eu sou?
+            home
           </li>
           <li
             onClick={() => scrollToElement('services')}
             className="p-2 hover:dark:bg-secondary hover:bg-gray-200 cursor-pointer rounded-sm"
           >
-            o que faço?
+            serviços
           </li>
           <li
             onClick={() => scrollToElement('projects')}
