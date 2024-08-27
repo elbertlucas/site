@@ -1,41 +1,55 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { scrollToElement } from '@/lib/scroll-into-view'
+import { scrollToElement2 } from '@/lib/scroll-into-view'
 import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
-import * as React from 'react'
+import React from 'react'
 
 export function Header() {
   const { setTheme } = useTheme()
 
+  function checkScroll() {
+    const header = document.getElementById('header')
+    if (window.scrollY > 50) {
+      header?.classList.remove('bg-transparent')
+      header?.classList.add('bg-gray-100')
+      header?.classList.add('dark:bg-slate-900')
+    } else {
+      header?.classList.remove('bg-gray-100')
+      header?.classList.remove('dark:bg-slate-900')
+      header?.classList.add('bg-transparent')
+    }
+  }
+
+  React.useEffect(() => {
+    window?.addEventListener('scroll', checkScroll)
+  })
+
   return (
-    <header className="flex justify-between items-center w-screen fixed top-2 px-6">
+    <header
+      id="header"
+      className="flex justify-between items-center w-screen fixed transition-colors top-0 p-2 px-6 md:p-4 md:px-6 z-50"
+    >
       <h2>
         <strong>elbert</strong>lucas
       </h2>
       <div className="flex justify-center items-center gap-2">
         <ul className="hidden sm:flex justify-center items-center gap-2 text-sm">
           <li
-            onClick={() => scrollToElement('home')}
+            onClick={() => scrollToElement2('home')}
             className="p-2 hover:dark:bg-secondary hover:bg-gray-200 cursor-pointer rounded-sm"
           >
             home
           </li>
           <li
-            onClick={() => scrollToElement('services')}
+            onClick={() => scrollToElement2('services')}
             className="p-2 hover:dark:bg-secondary hover:bg-gray-200 cursor-pointer rounded-sm"
           >
             serviços
           </li>
           <li
-            onClick={() => scrollToElement('projects')}
-            className="p-2 hover:dark:bg-secondary hover:bg-gray-200 cursor-pointer rounded-sm"
-          >
-            meus projetos
-          </li>
-          <li
-            onClick={() => scrollToElement('contacts')}
+            onClick={() => scrollToElement2('contacts')}
             className="p-2 hover:dark:bg-secondary hover:bg-gray-200 cursor-pointer rounded-sm"
           >
             contato

@@ -4,8 +4,10 @@ import { IProject, IRepo, api } from '@/lib/utils'
 import { useEffect, useState } from 'react'
 import { Badge } from './ui/badge'
 import { Button } from './ui/button'
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card'
+import { Card, CardContent, CardFooter, CardTitle } from './ui/card'
 import { Separator } from './ui/separator'
+import Image from 'next/image'
+import ProjectGif from '../app/job.gif'
 
 export function Projects() {
   const [projects, setProjects] = useState<IProject[]>([])
@@ -39,16 +41,13 @@ export function Projects() {
   return (
     <div
       id="projects"
-      className="flex flex-col justify-center items-center gap-4 overscroll-contain py-[3rem]"
+      className="flex flex-col justify-center items-center gap-4 overscroll-contain"
     >
-      <label className="w-2/3 text-2xl md:text-2xl font-semibold mb-4 text-center sm:text-left">
-        # Meus projetos
-      </label>
       <div className="flex flex-wrap justify-center items-start w-full gap-4">
         {projects.map((project, index) => (
           <Card
             key={index}
-            className={`w-[400px] h-[500px] flex flex-col justify-between border-2 bg-secondary dark:bg-primary-foreground rounded-md ${borderColor[project.category]}`}
+            className={`flex flex-col justify-between border-2 bg-secondary dark:bg-primary-foreground rounded-md ${borderColor[project.category]}`}
           >
             <CardContent>
               <CardTitle className="mt-4 mb-8 font-bold text-3xl">
@@ -65,7 +64,16 @@ export function Projects() {
                 ))}
               </div>
               <Separator className="my-4" />
-              <span className="font-semibold ">{project.description}</span>
+              <div className="flex flex-col w-full p-2 justify-center items-center gap-4">
+                <span className="font-semibold px-8 max-w-96 text-center">
+                  {project.description}
+                </span>
+                <Image
+                  src={ProjectGif}
+                  className="w-full"
+                  alt="Picture of the author"
+                />
+              </div>
             </CardContent>
             <CardFooter className="flex-col gap-2">
               <a className="w-full" href={project.repo_url} target="_blank">

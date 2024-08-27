@@ -7,7 +7,7 @@ export function Contacts() {
       id="contacts"
       className="flex flex-col justify-center items-center gap-4 overscroll-contain py-[3rem] border-b-2"
     >
-      <label className="w-2/3 text-2xl md:text-2xl font-semibold mb-4 text-center sm:text-left">
+      <label className="w-2/3 text-2xl md:text-2xl font-semibold mb-4 text-center">
         # Contatos{' '}
       </label>
       <a
